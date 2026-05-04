@@ -1,52 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 11:38:47 by raferrei          #+#    #+#             */
-/*   Updated: 2026/05/02 12:02:01 by raferrei         ###   ########.fr       */
+/*   Created: 2026/05/01 16:18:23 by raferrei          #+#    #+#             */
+/*   Updated: 2026/05/01 17:34:42 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strjoin(char const *s1, char const *s2)
+static int	ft_get_len(long n)
 {
-	char	*s;
-	int		i;
-	int		j;
+	int	len;
 
-	if (!s1 || !s2)
-		return (NULL);
-	s = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (s1[i])
+	len = 0;
+	if (n <= 0)
+		len ++;
+	while (n)
 	{
-		s[i] = s1[i];
-		i++;
+		n /= 10;
+		len++;
 	}
-	j = 0;
-	while (s2[j])
-	{
-		s[i + j] = s2[j];
-		j++;
-	}
-	s[i + j] = '\0';
-	return (s);
+	return (len);
 }
-/*
-#include <stdio.h>
 
-int	main()
+char	*ft_itoa(int n)
 {
-	char *s1 = "ola";
-	char *s2 = "crl";
+	char	*str;
+	int		len;
+	long	num;
 
-	printf("%s", ft_strjoin(s1, s2));
-	return (0);
+	num = n;
+	if (!n)
+		return (NULL);
+	len = ft_get_len(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (num == 0)
+		str[0] = '0';
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
+	while (num > 0)
+	{
+		str[--len] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (str);
 }
-*/

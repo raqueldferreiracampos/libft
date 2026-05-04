@@ -6,15 +6,15 @@
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:45:13 by raferrei          #+#    #+#             */
-/*   Updated: 2026/04/28 16:14:54 by raferrei         ###   ########.fr       */
+/*   Updated: 2026/05/02 13:03:56 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strdup(const char *s)
+char	*strdup(const char *s)
 {
-	char *s1;
+	char	*s1;
 	size_t	i;
 
 	i = 0;

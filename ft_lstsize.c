@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:37:45 by raferrei          #+#    #+#             */
-/*   Updated: 2026/05/04 15:49:33 by raferrei         ###   ########.fr       */
+/*   Created: 2026/05/02 17:54:26 by raferrei          #+#    #+#             */
+/*   Updated: 2026/05/02 18:03:04 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
-/*
-#include <stdio.h>
-
-int	main(void)
+int	ft_lstsize(t_list *lst)
 {
-	char	c = 'a';
-	printf("%d", ft_isalpha(c));
-	return (0);
+	int	numb;
+
+	numb = 0;
+	while (lst != NULL)
+	{
+		numb++;
+		lst = lst->next;
+	}
+	return (numb);
 }
-*/
