@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_all.c                                      :+:      :+:    :+:   */
+/*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 12:59:36 by raferrei          #+#    #+#             */
-/*   Updated: 2026/05/02 12:21:14 by raferrei         ###   ########.fr       */
+/*   Created: 2026/05/05 11:29:23 by raferrei          #+#    #+#             */
+/*   Updated: 2026/05/05 19:47:36 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
-static void	ft_free_all(char **words, int size)
+int	main()
 {
-	while (size > 0)
-		free(words[--size]);
-	free(words);
+	char	*s = "ola um dois tres";
+	char	c = ' ';
+	char **result = ft_split(s,c);
+	int i = 0;
+	while (result[i])
+	{
+		printf("%s", result[i]);
+		i++;
+	}
+	return (0);
 }
