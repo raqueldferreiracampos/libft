@@ -6,13 +6,13 @@
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:02:43 by raferrei          #+#    #+#             */
-/*   Updated: 2026/04/30 15:28:48 by raferrei         ###   ########.fr       */
+/*   Updated: 2026/05/06 15:15:38 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*a;
 	unsigned char	*b;

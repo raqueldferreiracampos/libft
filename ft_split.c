@@ -6,16 +6,16 @@
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 12:59:36 by raferrei          #+#    #+#             */
-/*   Updated: 2026/05/05 19:45:16 by raferrei         ###   ########.fr       */
+/*   Updated: 2026/05/06 16:09:04 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char **ft_fill_word(char const *s, char c, char **arr);
-static void ft_free_all(char **words, int size);
-static int ft_words_count(char const *s, char c);
-static char *ft_get_word(char const *s, char c, int *i);
+static char	**ft_fill_word(char const *s, char c, char **arr);
+static void	ft_free_all(char **words, int size);
+static int	ft_words_count(char const *s, char c);
+static char	*ft_get_word(char const *s, char c, int *i);
 
 char	**ft_split(char const *s, char c)
 {
@@ -36,7 +36,6 @@ static char	**ft_fill_word(char const *s, char c, char **arr)
 
 	i = 0;
 	j = 0;
-	
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
@@ -49,8 +48,8 @@ static char	**ft_fill_word(char const *s, char c, char **arr)
 				ft_free_all(arr, j);
 				return (NULL);
 			}
+			j++;
 		}
-		j++;
 	}
 	arr[j] = NULL;
 	return (arr);

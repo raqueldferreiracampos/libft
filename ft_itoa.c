@@ -6,7 +6,7 @@
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 16:18:23 by raferrei          #+#    #+#             */
-/*   Updated: 2026/05/05 20:11:12 by raferrei         ###   ########.fr       */
+/*   Updated: 2026/05/06 11:57:06 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,30 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
-	if (num == 0)
-	{
-		str[0] = '0';
-		return str;
-	}
 	if (num < 0)
 	{
 		str[0] = '-';
 		num = -num;
 	}
-	while (num > 0)
+	if (num == 0)
+		str[0] = '0';
+	while (num != 0)
 	{
 		str[--len] = (num % 10) + '0';
 		num /= 10;
 	}
 	return (str);
 }
+
+/*
+#include "stdio.h"
+#include "limits.h"
+int main()
+{
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(20));
+	printf("%s\n", ft_itoa(-100));
+	printf("%s\n", ft_itoa(INT_MAX));
+	printf("%s\n", ft_itoa(INT_MIN));
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:51:21 by raferrei          #+#    #+#             */
-/*   Updated: 2026/04/26 10:58:27 by raferrei         ###   ########.fr       */
+/*   Updated: 2026/05/07 13:19:19 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		while (n--)
+		while (i < n)
 		{
 			d[i] = s[i];
 			i++;

@@ -6,7 +6,7 @@
 /*   By: raferrei <raferrei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 15:37:12 by raferrei          #+#    #+#             */
-/*   Updated: 2026/04/27 12:06:08 by raferrei         ###   ########.fr       */
+/*   Updated: 2026/05/06 15:10:00 by raferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	chr;
 
 	i = ft_strlen(s);
-	chr = (char) c;
-	while (i > 0)
+	chr = (unsigned char) c;
+	while (i >= 0)
 	{
 		if (s[i] == chr)
 			return ((char *)&s[i]);
